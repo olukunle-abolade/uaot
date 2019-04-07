@@ -24,7 +24,7 @@
 *      https://app.skaffolder.com/#!/upgrade
 *
 * Or get up to 70% discount sharing your unique link:
-*       https://app.skaffolder.com/#!/register?friend=5ca6fb6b3e3a575750171757
+*       https://beta.skaffolder.com/#!/register?friend=5ca6fb6b3e3a575750171757
 *
 * You will get 10% discount for each one of your friends
 * 
@@ -37,13 +37,13 @@
  * SCHEMA DB User
  * 
 	{
-		mail: {
+		Abolade: {
 			type: 'String'
 		},
-		name: {
+		Olukunle: {
 			type: 'String'
 		},
-		password: {
+		asdf: {
 			type: 'String', 
 			required : true
 		},
@@ -79,15 +79,15 @@ $app->post('/Users',	function () use ($app){
 	$body = json_decode($app->request()->getBody());
 	
 	$params = array (
-		'mail'	=> isset($body->mail)?$body->mail:'',
-		'name'	=> isset($body->name)?$body->name:'',
-		'password'	=> $body->password,
+		'Abolade'	=> isset($body->Abolade)?$body->Abolade:'',
+		'Olukunle'	=> isset($body->Olukunle)?$body->Olukunle:'',
+		'asdf'	=> $body->asdf,
 		'roles'	=> isset($body->roles)?$body->roles:'',
 		'surname'	=> isset($body->surname)?$body->surname:'',
 		'username'	=> $body->username,
 			);
 
-	$obj = makeQuery("INSERT INTO user (_id, mail, name, password, roles, surname, username )  VALUES ( null, :mail, :name, :password, :roles, :surname, :username   )", $params, false);
+	$obj = makeQuery("INSERT INTO user (_id, Abolade, Olukunle, asdf, roles, surname, username )  VALUES ( null, :Abolade, :Olukunle, :asdf, :roles, :surname, :username   )", $params, false);
 
 	
 	echo json_encode($body);
@@ -137,14 +137,14 @@ $app->post('/Users/:id',	function ($id) use ($app){
 	
 	$params = array (
 		'id'	=> $id,
-		'mail'	    => isset($body->mail)?$body->mail:'',
-		'name'	    => isset($body->name)?$body->name:'',
-		'password'	    => $body->password,
+		'Abolade'	    => isset($body->Abolade)?$body->Abolade:'',
+		'Olukunle'	    => isset($body->Olukunle)?$body->Olukunle:'',
+		'asdf'	    => $body->asdf,
 		'roles'	    => isset($body->roles)?$body->roles:'',
 		'surname'	    => isset($body->surname)?$body->surname:'',
 		'username'	    => $body->username	);
 
-	$obj = makeQuery("UPDATE user SET  mail = :mail,  name = :name,  password = :password,  roles = :roles,  surname = :surname,  username = :username   WHERE _id = :id LIMIT 1", $params, false);
+	$obj = makeQuery("UPDATE user SET  Abolade = :Abolade,  Olukunle = :Olukunle,  asdf = :asdf,  roles = :roles,  surname = :surname,  username = :username   WHERE _id = :id LIMIT 1", $params, false);
 
 	
 	echo json_encode($body);

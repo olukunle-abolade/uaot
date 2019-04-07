@@ -9,16 +9,54 @@ USE `uaot_db`;
 -- ENTITIES
 
 --
+-- Struttura della tabella `findjob`
+--
+
+CREATE TABLE IF NOT EXISTS `findjob` (
+	`JobField` varchar(130) ,
+	`JobLocation` varchar(130) ,
+	`JobTitle` varchar(130) ,
+	
+	-- RELAZIONI
+
+	`_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT 
+
+);
+
+
+
+
+
+--
+-- Struttura della tabella `postjob`
+--
+
+CREATE TABLE IF NOT EXISTS `postjob` (
+	`JobField` varchar(130) ,
+	`JobLocation` varchar(130) ,
+	`JobTitle` varchar(130) ,
+	
+	-- RELAZIONI
+
+	`_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT 
+
+);
+
+
+
+
+
+--
 -- Struttura della tabella `user`
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-	`mail` varchar(40) ,
-	`name` varchar(40) ,
-	`password` varchar(40)  NOT NULL,
-	`roles` varchar(40) ,
-	`surname` varchar(40) ,
-	`username` varchar(40)  NOT NULL,
+	`Abolade` varchar(130) ,
+	`Olukunle` varchar(130) ,
+	`asdf` varchar(130)  NOT NULL,
+	`roles` varchar(130) ,
+	`surname` varchar(130) ,
+	`username` varchar(130)  NOT NULL,
 	
 	-- RELAZIONI
 
